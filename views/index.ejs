@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HabitHub</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo-title">
+                <img src="/logo.png" alt="Logo" class="logo">
+                <h1 class="nav-title">HabitHub</h1>
+            </div>
+            <div>
+                <a href="/add-habit" class="add-button">Add a New Habit</a>
+                <a href="/logout" class="logout-button">Logout</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="habits">
+            <% results.forEach(function(habit) { %>
+                <div class="habit">
+                    <h3><%= habit.title %></h3>
+                    <p><%= habit.description %></p>
+                    <p><strong>Frequency:</strong> <%= habit.target_frequency %> hour<%= habit.target_frequency > 1 ? 's' : '' %></p>
+                    <p><strong>Streak:</strong> <%= habit.streak %> day<%= habit.streak !== 1 ? 's' : '' %></p>
+                    <div class="button-group">
+                        <a href="/edit-habit/<%= habit.id %>" class="button edit-button">Edit</a>
+                        <form action="/delete-habit/<%= habit.id %>" method="POST" class="button-form">
+                            <button type="submit" class="button delete-button">Delete</button>
+                        </form>
+                        <form action="/complete-habit/<%= habit.id %>" method="POST" class="button-form">
+                            <button type="submit" class="button complete-button">Completed</button>
+                        </form>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+
+    <div id="quote-popup" class="quote-popup">
+        <div class="quote-content">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <p id="quote-text"></p>
+        </div>
+    </div>
+
+    <script>
+        const quotes = [
+            "Keep going! You're doing great!",
+            "Believe in yourself!",
+            "Consistency is the key to success!",
+            "You're building great habits!",
+            "Stay strong and keep pushing forward!"
+        ];
+
+        function showPopup() {
+            const quotePopup = document.getElementById("quote-popup");
+            const quoteText = document.getElementById("quote-text");
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            quoteText.textContent = randomQuote;
+            quotePopup.style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("quote-popup").style.display = "none";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const showPopupFlag = <%= showPopup %>;
+            if (showPopupFlag) {
+                showPopup();
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

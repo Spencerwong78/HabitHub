@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: black; /* Default text color is white */
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 10px;
+    color: white;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px; /* Adjust as needed */
+    margin-right: 10px; /* Space between logo and title */
+}
+
+.nav-title {
+    margin: 0;
+}
+
+.add-button, .back-button, .logout-button, .button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.add-button, .back-button, .logout-button {
+    width: auto;
+}
+
+.button {
+    width: 100px;
+    height: 40px;
+    line-height: 20px;
+}
+
+.add-button:hover, .back-button:hover, .logout-button:hover, .button:hover {
+    background-color: #218838;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.habits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.habit {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    color: black; /* Set text color to black for better readability */
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+}
+
+label, input, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.button-form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Add a New Habit form specific styles */
+.add-habit-container h1,
+.add-habit-container label {
+    color: black; /* Set text color to black */
+}
+
+/* Popup container */
+.quote-popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Popup content */
+.quote-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Close button */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+

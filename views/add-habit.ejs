@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add a New Habit</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="nav-title">HabitHub</h1>
+            <a href="/" class="back-button">Back to Habits</a>
+        </div>
+    </nav>
+    <div class="container add-habit-container">
+        <h1>Add a New Habit</h1>
+        <form action="/add-habit" method="POST">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+            <br>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" required>
+            <br>
+            <label for="frequency">Target Frequency:</label>
+            <select id="frequency" name="frequency" required>
+                <% for(let i = 0.5; i <= 24; i += 0.5) { %>
+                    <option value="<%= i %>"><%= i %> hour<%= i > 1 ? 's' : '' %></option>
+                <% } %>
+            </select>
+            <br>
+            <button type="submit">Add Habit</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+

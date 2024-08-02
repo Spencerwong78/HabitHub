@@ -7,10 +7,10 @@ const app = express();
 
 // Create MySQL connection
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'habit_hub'
+    host: 'mysql-habithub.alwaysdata.net',
+    user: 'habithub',
+    password: 'Shadowthedog78!',
+    database: 'habithub_2024'
 });
 
 connection.connect((err) => {
